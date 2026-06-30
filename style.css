@@ -11,14 +11,54 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
+/* INTRO ANIMATION */
+.intro {
+  position: fixed;
+  inset: 0;
+  background: black;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
+  animation: fadeOut 2.5s ease forwards;
+  animation-delay: 1.8s;
+}
+
+.intro h1 {
+  font-size: 60px;
+  letter-spacing: 12px;
+  animation: zoomIn 1.5s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1.4); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* AUDIO BACKGROUND CANVAS */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  background: radial-gradient(circle at center, #15151b, #050507 70%);
 }
 
 .hero h1 {
@@ -26,87 +66,73 @@ body {
   letter-spacing: 10px;
 }
 
-/* SOCIAL ICONS */
+/* SOCIALS */
 .socials {
   margin-top: 20px;
   display: flex;
-  gap: 18px;
   justify-content: center;
+  gap: 18px;
 }
 
 .socials a {
   color: white;
-  font-size: 18px;
   opacity: 0.7;
+  font-size: 18px;
   transition: 0.3s;
 }
 
 .socials a:hover {
   opacity: 1;
-  transform: scale(1.15);
-}
-
-.tagline {
-  margin-top: 15px;
-  opacity: 0.6;
+  transform: scale(1.2);
 }
 
 /* SECTIONS */
 .section {
-  padding: 100px 12%;
-  max-width: 1100px;
-  margin: auto;
+  padding: 120px 12%;
 }
 
 .dark {
   background: #0b0b10;
 }
 
-h2 {
-  font-size: 12px;
-  letter-spacing: 4px;
-  opacity: 0.6;
-  margin-bottom: 20px;
-}
-
-/* MUSIC EMBED */
-.embed {
-  max-width: 900px;
-  margin: auto;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.card {
-  height: 220px;
-  background: #15151b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.6;
-  border-radius: 8px;
-}
-
-/* EMAIL */
-.email {
-  color: white;
-  text-decoration: none;
-  border-bottom: 1px solid white;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
+/* RELEASE */
+.release-box {
   padding: 40px;
-  opacity: 0.4;
+  background: #15151b;
+  border-radius: 12px;
+  text-align: center;
 }
 
-/* REVEAL ANIMATION */
+.release-box a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+}
+
+/* EMAIL CAPTURE */
+.email-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.email-form input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+}
+
+.email-form button {
+  padding: 12px 20px;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
