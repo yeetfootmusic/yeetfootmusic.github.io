@@ -1,7 +1,5 @@
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* SCROLL REVEAL */
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
@@ -10,69 +8,74 @@ window.addEventListener("scroll", () => {
       el.classList.add("active");
     }
   });
+
+  triggerAboutAnimation();
 });
 
-/* =========================
-   EMAIL CAPTURE (STATIC SAFE)
-========================= */
+/* EMAIL CAPTURE */
 document.getElementById("emailForm").addEventListener("submit", (e) => {
   e.preventDefault();
-
   const email = document.getElementById("emailInput").value;
-
   localStorage.setItem("yeetfoot_email", email);
-
   alert("Request received — EPK access logged.");
 });
 
-/* =========================
-   CANVAS SETUP (FIXED DESKTOP)
-========================= */
+/* CANVAS SETUP */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
+function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
 
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
+window.addEventListener("resize", resize);
+resize();
 
-/* =========================
-   🎛️ WAVEFORM BACKGROUND
-   (CINEMATIC AUDIO-STYLE MOTION)
-========================= */
-
+/* WAVEFORM ANIMATION */
 let t = 0;
 
-function drawWaveform() {
+function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const width = canvas.width;
-  const height = canvas.height;
-
   const bars = 180;
-  const barWidth = width / bars;
+  const w = canvas.width / bars;
 
   for (let i = 0; i < bars; i++) {
-
-    // layered sine waves = "audio illusion"
     const wave =
-      Math.sin(i * 0.12 + t) * 0.6 +
-      Math.sin(i * 0.05 + t * 1.3) * 0.4;
+      Math.sin(i * 0.12 + t) +
+      Math.sin(i * 0.05 + t * 1.3);
 
-    const barHeight = (wave + 1) * 75;
+    const h = (wave + 2) * 40;
 
-    const x = i * barWidth;
-    const y = height / 2 - barHeight / 2;
-
-    ctx.fillStyle = "rgba(255,255,255,0.035)";
-    ctx.fillRect(x, y, barWidth * 0.6, barHeight);
+    ctx.fillStyle = "rgba(255,255,255,0.03)";
+    ctx.fillRect(i * w, canvas.height / 2 - h / 2, w * 0.6, h);
   }
 
-  t += 0.025;
-  requestAnimationFrame(drawWaveform);
+  t += 0.03;
+  requestAnimationFrame(draw);
 }
 
-drawWaveform();
+draw();
+
+/* ABOUT WORD ANIMATION */
+function triggerAboutAnimation() {
+  const el = document.getElementById("aboutText");
+  if (!el || el.dataset.done) return;
+
+  const words = el.innerText.split(" ");
+  el.innerHTML = "";
+
+  words.forEach((word, i) => {
+    const span = document.createElement("span");
+    span.className = "about-word";
+    span.textContent = word + " ";
+    el.appendChild(span);
+
+    setTimeout(() => {
+      span.classList.add("show");
+    }, i * 80);
+  });
+
+  el.dataset.done = "true";
+}
