@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* INTRO ANIMATION */
+/* INTRO */
 .intro {
   position: fixed;
   inset: 0;
@@ -21,29 +21,22 @@ body {
   justify-content: center;
   z-index: 999;
   animation: fadeOut 2.5s ease forwards;
-  animation-delay: 1.8s;
+  animation-delay: 1.5s;
 }
 
 .intro h1 {
   font-size: 60px;
   letter-spacing: 12px;
-  animation: zoomIn 1.5s ease;
-}
-
-@keyframes zoomIn {
-  from { transform: scale(1.4); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
 }
 
 @keyframes fadeOut {
   to { opacity: 0; visibility: hidden; }
 }
 
-/* AUDIO BACKGROUND CANVAS */
+/* CANVAS */
 canvas {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 0;
 }
 
@@ -53,6 +46,7 @@ canvas {
   z-index: 2;
 }
 
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -88,17 +82,19 @@ canvas {
 
 /* SECTIONS */
 .section {
-  padding: 120px 12%;
+  padding: 110px 12%;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .dark {
   background: #0b0b10;
 }
 
-/* RELEASE */
+/* RELEASE BOX */
 .release-box {
-  padding: 40px;
   background: #15151b;
+  padding: 40px;
   border-radius: 12px;
   text-align: center;
 }
@@ -108,11 +104,31 @@ canvas {
   margin-top: 15px;
   padding: 10px 20px;
   border: 1px solid white;
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
-/* EMAIL CAPTURE */
+/* STREAM PLATFORMS */
+.platforms {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.platforms a {
+  color: white;
+  opacity: 0.7;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.platforms a:hover {
+  opacity: 1;
+  border-bottom: 1px solid white;
+}
+
+/* EMAIL */
 .email-form {
   display: flex;
   gap: 10px;
@@ -142,4 +158,10 @@ canvas {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.small {
+  margin-top: 10px;
+  opacity: 0.5;
+  font-size: 12px;
 }
