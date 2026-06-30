@@ -1,16 +1,21 @@
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 body {
   font-family: "Inter", sans-serif;
   color: white;
   overflow-x: hidden;
+  text-align: center;
 
   background-image: url("https://images.unsplash.com/photo-1518837695005-2083093ee35b");
   background-size: cover;
@@ -18,7 +23,7 @@ body {
   background-attachment: fixed;
 }
 
-/* DARK OVERLAY */
+/* dark overlay */
 body::before {
   content: "";
   position: fixed;
@@ -28,7 +33,9 @@ body::before {
   pointer-events: none;
 }
 
-/* CANVAS */
+/* =========================
+   CANVAS (WAVEFORM)
+========================= */
 canvas {
   position: fixed;
   inset: 0;
@@ -39,18 +46,23 @@ canvas {
   opacity: 0.85;
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT LAYER
+========================= */
 .content {
   position: relative;
   z-index: 2;
 }
 
-/* HERO */
+/* =========================
+   HERO (CENTERED)
+========================= */
 .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -59,7 +71,9 @@ canvas {
   letter-spacing: 10px;
 }
 
-/* SOCIALS */
+/* =========================
+   SOCIALS
+========================= */
 .socials {
   margin-top: 20px;
   display: flex;
@@ -69,8 +83,8 @@ canvas {
 
 .socials a {
   color: white;
-  opacity: 0.7;
   font-size: 18px;
+  opacity: 0.7;
   transition: 0.25s;
 }
 
@@ -79,25 +93,40 @@ canvas {
   transform: scale(1.2);
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS (FULL CENTER SYSTEM)
+========================= */
 .section {
   padding: 110px 12%;
   max-width: 1100px;
   margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* RELEASE */
+/* =========================
+   RELEASE BOX
+========================= */
 .release-box {
   background: #15151b;
   padding: 40px;
   border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-/* STREAM */
+/* =========================
+   STREAM LINKS
+========================= */
 .platforms {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -112,7 +141,9 @@ canvas {
   opacity: 1;
 }
 
-/* EMAIL */
+/* =========================
+   EMAIL FORM
+========================= */
 .email-form {
   display: flex;
   gap: 10px;
@@ -134,19 +165,13 @@ canvas {
 }
 
 /* =========================
-   ABOUT (FIXED + SMOOTH)
+   ABOUT (FIXED + CLEAN + SLOW)
 ========================= */
-
 .about-text {
   max-width: 750px;
   margin: auto;
   text-align: center;
-  line-height: 1.8;
-
-  /* prevents ANY spacing collapse issues */
-  white-space: normal;
-  word-spacing: normal;
-  letter-spacing: normal;
+  line-height: 1.9;
 
   opacity: 0;
   transform: translateY(30px);
@@ -163,7 +188,9 @@ canvas {
   filter: blur(0);
 }
 
-/* REVEAL (OTHER SECTIONS) */
+/* =========================
+   REVEAL SYSTEM
+========================= */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -175,7 +202,9 @@ canvas {
   transform: translateY(0);
 }
 
-/* SMALL TEXT */
+/* =========================
+   SMALL TEXT
+========================= */
 .small {
   margin-top: 10px;
   opacity: 0.5;
