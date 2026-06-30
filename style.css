@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-/* BODY + BACKGROUND */
+/* BODY */
 body {
   font-family: "Inter", sans-serif;
   color: white;
@@ -39,35 +39,10 @@ canvas {
   opacity: 0.85;
 }
 
-/* CONTENT LAYER */
+/* CONTENT */
 .content {
   position: relative;
   z-index: 2;
-}
-
-/* INTRO */
-.intro {
-  position: fixed;
-  inset: 0;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  animation: fadeOut 2.2s ease forwards;
-  animation-delay: 1.4s;
-}
-
-.intro h1 {
-  font-size: 60px;
-  letter-spacing: 14px;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
 }
 
 /* HERO */
@@ -94,8 +69,8 @@ canvas {
 
 .socials a {
   color: white;
-  font-size: 18px;
   opacity: 0.7;
+  font-size: 18px;
   transition: 0.25s;
 }
 
@@ -119,7 +94,7 @@ canvas {
   text-align: center;
 }
 
-/* STREAM LINKS */
+/* STREAM */
 .platforms {
   display: flex;
   justify-content: center;
@@ -135,7 +110,6 @@ canvas {
 
 .platforms a:hover {
   opacity: 1;
-  text-decoration: underline;
 }
 
 /* EMAIL */
@@ -159,7 +133,37 @@ canvas {
   cursor: pointer;
 }
 
-/* REVEAL */
+/* =========================
+   ABOUT (FIXED + SMOOTH)
+========================= */
+
+.about-text {
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+  line-height: 1.8;
+
+  /* prevents ANY spacing collapse issues */
+  white-space: normal;
+  word-spacing: normal;
+  letter-spacing: normal;
+
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(8px);
+
+  transition: opacity 2.2s ease,
+              transform 2.2s ease,
+              filter 2.2s ease;
+}
+
+.about-text.show {
+  opacity: 0.9;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* REVEAL (OTHER SECTIONS) */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -169,29 +173,6 @@ canvas {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* =========================
-   ABOUT (FIXED — NO BUGS)
-========================= */
-
-.about-text {
-  max-width: 750px;
-  margin: auto;
-  text-align: center;
-  line-height: 1.8;
-
-  opacity: 0;
-  transform: translateY(20px);
-  filter: blur(6px);
-
-  transition: all 1.2s ease;
-}
-
-.about-text.show {
-  opacity: 0.9;
-  transform: translateY(0);
-  filter: blur(0);
 }
 
 /* SMALL TEXT */
