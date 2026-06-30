@@ -1,3 +1,4 @@
+
 /* RESET */
 * {
   margin: 0;
@@ -7,12 +8,31 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: #050507;
   color: white;
   overflow-x: hidden;
+
+  /* 🎧 BACKGROUND IMAGE */
+  background-image: url("https://images.unsplash.com/photo-1518837695005-2083093ee35b");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* INTRO SCREEN */
+/* 🌑 DARK OVERLAY (makes text readable) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.88)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* INTRO */
 .intro {
   position: fixed;
   inset: 0;
@@ -37,7 +57,7 @@ body {
   }
 }
 
-/* CANVAS BACKGROUND (IMPORTANT FIX FOR DESKTOP) */
+/* CANVAS (FIXED FOR DESKTOP) */
 canvas {
   position: fixed;
   inset: 0;
@@ -45,10 +65,11 @@ canvas {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0.85;
+  filter: blur(0.2px);
 }
 
-/* CONTENT LAYER */
+/* CONTENT ABOVE EVERYTHING */
 .content {
   position: relative;
   z-index: 2;
@@ -85,13 +106,7 @@ canvas {
 
 .socials a:hover {
   opacity: 1;
-  transform: translateY(-2px) scale(1.2);
-}
-
-/* TAGLINE */
-.tagline {
-  margin-top: 15px;
-  opacity: 0.6;
+  transform: scale(1.2);
 }
 
 /* SECTIONS */
@@ -105,7 +120,7 @@ canvas {
   background: #0b0b10;
 }
 
-/* HEADINGS */
+/* HEADERS */
 h2 {
   font-size: 12px;
   letter-spacing: 4px;
@@ -142,15 +157,14 @@ h2 {
   color: white;
   opacity: 0.7;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
 }
 
 .platforms a:hover {
   opacity: 1;
-  border-bottom: 1px solid white;
+  text-decoration: underline;
 }
 
-/* EMAIL FORM */
+/* EMAIL */
 .email-form {
   display: flex;
   gap: 10px;
@@ -169,7 +183,6 @@ h2 {
   background: white;
   border: none;
   cursor: pointer;
-  font-weight: 600;
 }
 
 /* ANIMATION */
@@ -184,7 +197,6 @@ h2 {
   transform: translateY(0);
 }
 
-/* SMALL TEXT */
 .small {
   margin-top: 10px;
   opacity: 0.5;
