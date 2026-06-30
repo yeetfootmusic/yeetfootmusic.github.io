@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yeetfoot | EPK</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Yeetfoot | Electronic Artist</title>
 
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- CURSOR LIGHT EFFECT -->
+<div class="cursor-glow"></div>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="overlay"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
 
-  <div class="hero-content">
+  <div class="hero-content reveal">
     <h1>YEETFOOT</h1>
-    <p>Electronic • House • Melodic</p>
+    <p>Electronic / Melodic House / Atmospheric Club</p>
 
-    <div class="links">
-      <a href="https://open.spotify.com" target="_blank">Spotify</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="mailto:booking@yeetfoot.com">Booking</a>
+    <div class="cta">
+      <a href="#music">LISTEN</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">BOOKING</a>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="section">
+<section id="about" class="section reveal">
   <h2>ABOUT</h2>
   <p>
-    Yeetfoot is an electronic music project focused on melodic house,
-    atmospheric sound design, and emotional club energy.
+    Yeetfoot is an electronic music project focused on melodic progression,
+    atmospheric textures, and emotional club energy. Built for late-night sets,
+    sunrise moments, and immersive listening environments.
   </p>
 </section>
 
 <!-- MUSIC -->
-<section class="section dark">
+<section id="music" class="section dark reveal">
   <h2>MUSIC</h2>
 
-  <!-- Replace with your real Spotify artist ID -->
   <div class="embed">
     <iframe
       src="https://open.spotify.com/embed/artist/YOUR_SPOTIFY_ID"
       width="100%"
-      height="352"
+      height="380"
       frameborder="0"
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
     </iframe>
@@ -53,20 +57,33 @@
 </section>
 
 <!-- PRESS -->
-<section class="section">
+<section class="section reveal">
   <h2>PRESS PHOTOS</h2>
 
   <div class="grid">
-    <div class="card">PHOTO 1</div>
-    <div class="card">PHOTO 2</div>
-    <div class="card">PHOTO 3</div>
+    <div class="card">PRESS 01</div>
+    <div class="card">PRESS 02</div>
+    <div class="card">PRESS 03</div>
+  </div>
+</section>
+
+<!-- LIVE -->
+<section class="section dark reveal">
+  <h2>LIVE</h2>
+  <p>Selected performances, mixes, and live sets.</p>
+
+  <div class="video">
+    <iframe width="100%" height="400"
+      src="https://www.youtube.com/embed/"
+      frameborder="0" allowfullscreen>
+    </iframe>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section dark">
+<section id="contact" class="section reveal">
   <h2>BOOKING</h2>
-  <p>For shows, support slots, and collaborations:</p>
+  <p>Management / Shows / Collabs</p>
 
   <a class="email" href="mailto:booking@yeetfoot.com">
     booking@yeetfoot.com
@@ -74,8 +91,9 @@
 </section>
 
 <footer>
-  <p>© Yeetfoot</p>
+  <p>© YEETFOOT</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
