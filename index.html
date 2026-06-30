@@ -3,41 +3,60 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Yeetfoot | Electronic Artist</title>
+<title>Yeetfoot | EPK</title>
 
 <link rel="stylesheet" href="style.css"/>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- CURSOR LIGHT EFFECT -->
-<div class="cursor-glow"></div>
-
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
 
   <div class="hero-content reveal">
-    <h1>YEETFOOT</h1>
-    <p>Electronic / Melodic House / Atmospheric Club</p>
 
-    <div class="cta">
-      <a href="#music">LISTEN</a>
-      <a href="#about">ABOUT</a>
-      <a href="#contact">BOOKING</a>
+    <h1>YEETFOOT</h1>
+
+    <!-- SOCIAL ICONS -->
+    <div class="socials">
+      <a href="https://open.spotify.com/artist/72lU4JJ2Hpqz4xuXzw7Ntg" target="_blank">
+        <i class="fa-brands fa-spotify"></i>
+      </a>
+
+      <a href="https://instagram.com" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="https://soundcloud.com" target="_blank">
+        <i class="fa-brands fa-soundcloud"></i>
+      </a>
+
+      <a href="https://youtube.com" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a href="mailto:booking@yeetfoot.com">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
     </div>
+
+    <p class="tagline">Electronic • Melodic House • Atmospheric Club</p>
+
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section reveal">
+<section class="section reveal">
   <h2>ABOUT</h2>
   <p>
     Yeetfoot is an electronic music project focused on melodic progression,
-    atmospheric textures, and emotional club energy. Built for late-night sets,
-    sunrise moments, and immersive listening environments.
+    atmospheric sound design, and emotional club energy built for late-night sets and sunrise moments.
   </p>
 </section>
 
@@ -46,13 +65,18 @@
   <h2>MUSIC</h2>
 
   <div class="embed">
-    <iframe
-      src="https://open.spotify.com/embed/artist/YOUR_SPOTIFY_ID"
+
+    <iframe data-testid="embed-iframe"
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/artist/72lU4JJ2Hpqz4xuXzw7Ntg?utm_source=generator&si=8250fea9413b46bd"
       width="100%"
-      height="380"
+      height="352"
       frameborder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
     </iframe>
+
   </div>
 </section>
 
@@ -67,23 +91,11 @@
   </div>
 </section>
 
-<!-- LIVE -->
-<section class="section dark reveal">
-  <h2>LIVE</h2>
-  <p>Selected performances, mixes, and live sets.</p>
-
-  <div class="video">
-    <iframe width="100%" height="400"
-      src="https://www.youtube.com/embed/"
-      frameborder="0" allowfullscreen>
-    </iframe>
-  </div>
-</section>
-
 <!-- CONTACT -->
-<section id="contact" class="section reveal">
+<section class="section dark reveal">
   <h2>BOOKING</h2>
-  <p>Management / Shows / Collabs</p>
+
+  <p>For shows, support slots, and collaborations:</p>
 
   <a class="email" href="mailto:booking@yeetfoot.com">
     booking@yeetfoot.com
