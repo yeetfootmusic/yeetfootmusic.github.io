@@ -1,16 +1,24 @@
 
-/* RESET */
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* Prevent horizontal overflow bugs */
+html, body {
+  overflow-x: hidden;
+}
+
+/* =========================
+   BODY
+========================= */
 body {
   font-family: "Inter", sans-serif;
   color: white;
-  overflow-x: hidden;
   text-align: center;
 
   background-image: url("https://images.unsplash.com/photo-1518837695005-2083093ee35b");
@@ -29,7 +37,9 @@ body::before {
   pointer-events: none;
 }
 
-/* CANVAS */
+/* =========================
+   WAVEFORM CANVAS
+========================= */
 canvas {
   position: fixed;
   inset: 0;
@@ -40,14 +50,17 @@ canvas {
   opacity: 0.85;
 }
 
-/* CONTENT LAYER */
+/* =========================
+   CONTENT LAYER
+========================= */
 .content {
   position: relative;
   z-index: 2;
-  text-align: center;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
   height: 100vh;
   display: flex;
@@ -62,7 +75,9 @@ canvas {
   letter-spacing: 10px;
 }
 
-/* SOCIALS */
+/* =========================
+   SOCIAL LINKS
+========================= */
 .socials {
   margin-top: 20px;
   display: flex;
@@ -72,8 +87,8 @@ canvas {
 
 .socials a {
   color: white;
-  font-size: 18px;
   opacity: 0.7;
+  font-size: 18px;
   transition: 0.25s;
 }
 
@@ -82,24 +97,67 @@ canvas {
   transform: scale(1.2);
 }
 
-/* SECTIONS */
+/* =========================
+   SECTION SYSTEM (CORE FIX)
+========================= */
 .section {
-  padding: 110px 12%;
-  max-width: 1100px;
-  margin: auto;
+  width: 100%;
+  padding: 110px 20px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
   text-align: center;
+  box-sizing: border-box;
 }
 
-/* HEADINGS */
+/* LOCK CONTENT WIDTH (THIS FIXES YOUR OVERFLOW BUG) */
+.section > * {
+  width: 100%;
+  max-width: 750px;
+}
+
+/* =========================
+   HEADINGS (ALIGN FIX)
+========================= */
 .section h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-/* RELEASE BOX */
+/* =========================
+   ABOUT SECTION (FIXED + SAFE)
+========================= */
+.about-text {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+
+  text-align: center;
+  line-height: 1.9;
+
+  /* prevents overflow + broken wrapping */
+  overflow-wrap: break-word;
+  word-break: normal;
+
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(8px);
+
+  transition: all 2.2s ease;
+}
+
+.about-text.show {
+  opacity: 0.9;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* =========================
+   RELEASE BOX
+========================= */
 .release-box {
   background: #15151b;
   padding: 40px;
@@ -111,7 +169,9 @@ canvas {
   text-align: center;
 }
 
-/* STREAM LINKS */
+/* =========================
+   STREAM LINKS
+========================= */
 .platforms {
   display: flex;
   justify-content: center;
@@ -120,12 +180,15 @@ canvas {
   flex-wrap: wrap;
 }
 
-/* EMAIL FORM */
+/* =========================
+   EMAIL FORM
+========================= */
 .email-form {
   display: flex;
+  justify-content: center;
   gap: 10px;
   margin-top: 20px;
-  justify-content: center;
+  width: 100%;
 }
 
 .email-form input {
@@ -142,27 +205,9 @@ canvas {
   cursor: pointer;
 }
 
-/* ABOUT */
-.about-text {
-  max-width: 750px;
-  margin: auto;
-  text-align: center;
-  line-height: 1.9;
-
-  opacity: 0;
-  transform: translateY(30px);
-  filter: blur(8px);
-
-  transition: all 2.2s ease;
-}
-
-.about-text.show {
-  opacity: 0.9;
-  transform: translateY(0);
-  filter: blur(0);
-}
-
-/* REVEAL */
+/* =========================
+   REVEAL ANIMATION
+========================= */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -174,7 +219,9 @@ canvas {
   transform: translateY(0);
 }
 
-/* SMALL TEXT */
+/* =========================
+   SMALL TEXT
+========================= */
 .small {
   margin-top: 10px;
   opacity: 0.5;
