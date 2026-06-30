@@ -11,25 +11,38 @@ body {
   color: white;
   overflow-x: hidden;
 
-  /* 🎧 BACKGROUND IMAGE */
+  /* BACKGROUND IMAGE */
   background-image: url("https://images.unsplash.com/photo-1518837695005-2083093ee35b");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* 🌑 DARK OVERLAY (makes text readable) */
+/* DARK OVERLAY */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.88)
-  );
+  background: radial-gradient(circle, rgba(0,0,0,0.55), rgba(0,0,0,0.88));
   z-index: 1;
   pointer-events: none;
+}
+
+/* CANVAS */
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 2;
 }
 
 /* INTRO */
@@ -51,28 +64,7 @@ body::before {
 }
 
 @keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* CANVAS (FIXED FOR DESKTOP) */
-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.85;
-  filter: blur(0.2px);
-}
-
-/* CONTENT ABOVE EVERYTHING */
-.content {
-  position: relative;
-  z-index: 2;
+  to { opacity: 0; visibility: hidden; }
 }
 
 /* HERO */
@@ -120,15 +112,7 @@ canvas {
   background: #0b0b10;
 }
 
-/* HEADERS */
-h2 {
-  font-size: 12px;
-  letter-spacing: 4px;
-  opacity: 0.6;
-  margin-bottom: 20px;
-}
-
-/* RELEASE BOX */
+/* RELEASE */
 .release-box {
   background: #15151b;
   padding: 40px;
@@ -145,7 +129,7 @@ h2 {
   text-decoration: none;
 }
 
-/* STREAM LINKS */
+/* STREAM */
 .platforms {
   display: flex;
   justify-content: center;
@@ -185,7 +169,28 @@ h2 {
   cursor: pointer;
 }
 
-/* ANIMATION */
+/* ABOUT ANIMATION */
+.about-text {
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.about-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.5s ease;
+}
+
+.about-word.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
