@@ -1,40 +1,40 @@
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: #0b0b0f;
   color: #fff;
+  line-height: 1.6;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('assets/hero.jpg') center/cover no-repeat;
-  position: relative;
+  background: #111;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 60%);
 }
 
 .hero-content {
-  position: relative;
   z-index: 2;
 }
 
 .hero h1 {
-  font-size: 64px;
+  font-size: clamp(40px, 6vw, 80px);
   letter-spacing: 6px;
   margin: 0;
 }
 
 .hero p {
-  opacity: 0.7;
+  opacity: 0.6;
   margin-top: 10px;
 }
 
@@ -47,45 +47,52 @@ body {
   color: #fff;
   margin: 0 10px;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  opacity: 0.8;
 }
 
 .links a:hover {
-  border-bottom: 1px solid #fff;
+  opacity: 1;
 }
 
 /* SECTIONS */
 .section {
-  padding: 80px 20%;
-}
-
-.section h2 {
-  font-size: 20px;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
+  padding: 80px 10%;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .dark {
   background: #111;
 }
 
+/* TITLES */
+h2 {
+  letter-spacing: 3px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
+  margin-top: 20px;
 }
 
 .card {
-  height: 250px;
-  background: #222;
+  height: 200px;
+  background: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
+  opacity: 0.7;
 }
 
 /* EMAIL */
 .email {
   color: #fff;
-  font-size: 18px;
   text-decoration: none;
   border-bottom: 1px solid #fff;
 }
@@ -94,5 +101,5 @@ body {
 footer {
   text-align: center;
   padding: 40px;
-  opacity: 0.5;
+  opacity: 0.4;
 }
