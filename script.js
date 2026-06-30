@@ -1,8 +1,7 @@
 
 /* =========================
-   SCROLL REVEAL SYSTEM
+   SCROLL REVEAL
 ========================= */
-
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
@@ -14,9 +13,27 @@ window.addEventListener("scroll", () => {
 });
 
 /* =========================
-   EMAIL CAPTURE (LOCAL ONLY)
+   ABOUT (CLEAN + STABLE)
 ========================= */
+const about = document.getElementById("aboutText");
 
+const aboutObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.35
+});
+
+if (about) {
+  aboutObserver.observe(about);
+}
+
+/* =========================
+   EMAIL CAPTURE
+========================= */
 document.getElementById("emailForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -29,7 +46,6 @@ document.getElementById("emailForm").addEventListener("submit", (e) => {
 /* =========================
    CANVAS WAVEFORM
 ========================= */
-
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
@@ -71,24 +87,3 @@ function draw() {
 }
 
 draw();
-
-/* =========================
-   ABOUT ANIMATION (FIXED)
-   NO TEXT REWRITING = NO BUGS
-========================= */
-
-const about = document.getElementById("aboutText");
-
-const aboutObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, {
-  threshold: 0.35
-});
-
-if (about) {
-  aboutObserver.observe(about);
-}
