@@ -1,105 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Yeetfoot | EPK</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yeetfoot EPK</title>
 
-<link rel="stylesheet" href="style.css"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div class="intro" id="intro">
-  <h1>YEETFOOT</h1>
-</div>
+  <!-- WAVEFORM BACKGROUND -->
+  <canvas id="bg"></canvas>
 
-<!-- BACKGROUND -->
-<canvas id="bg"></canvas>
+  <div class="content">
 
-<div class="content">
+    <!-- HERO -->
+    <section class="hero">
+      <h1>YEETFOOT</h1>
 
-<!-- HERO -->
-<section class="hero reveal">
+      <div class="socials">
+        <a href="https://www.instagram.com/yeetfootmusic/" target="_blank">Instagram</a>
+        <a href="https://music.apple.com/gb/artist/yeetfoot/1636863748" target="_blank">Apple Music</a>
+        <a href="https://www.youtube.com/channel/UCcBVL7m0duC37T-6wvVXBWw" target="_blank">YouTube</a>
+      </div>
+    </section>
 
-  <h1>YEETFOOT</h1>
+    <!-- ABOUT -->
+    <section class="section">
+      <h2>ABOUT</h2>
 
-  <div class="socials">
+      <p class="about-text" id="aboutText">
+        Yeetfoot is a Denver-based electronic music project focused on melodic, atmospheric, and emotionally driven club music. Built for immersive listening experiences and late-night dancefloors, the sound blends deep rhythm with cinematic energy.
+      </p>
+    </section>
 
-    <a href="https://open.spotify.com/artist/72lU4JJ2Hpqz4xuXzw7Ntg"><i class="fa-brands fa-spotify"></i></a>
-    <a href="https://www.instagram.com/yeetfootmusic/"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://music.apple.com/gb/artist/yeetfoot/1636863748"><i class="fa-brands fa-apple"></i></a>
-    <a href="https://www.youtube.com/channel/UCcBVL7m0duC37T-6wvVXBWw"><i class="fa-brands fa-youtube"></i></a>
-    <a href="mailto:booking@yeetfoot.com"><i class="fa-solid fa-envelope"></i></a>
+    <!-- LATEST RELEASE -->
+    <section class="section">
+      <h2>LATEST RELEASE</h2>
+
+      <div class="release-box">
+        <p>Stream the latest release on Spotify</p>
+
+        <!-- SPOTIFY EMBED -->
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/artist/72lU4JJ2Hpqz4xuXzw7Ntg"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- STREAM -->
+    <section class="section">
+      <h2>STREAM ON</h2>
+
+      <div class="platforms">
+        <a href="https://open.spotify.com/artist/72lU4JJ2Hpqz4xuXzw7Ntg" target="_blank">Spotify</a>
+        <a href="https://music.apple.com/gb/artist/yeetfoot/1636863748" target="_blank">Apple Music</a>
+        <a href="https://www.youtube.com/channel/UCcBVL7m0duC37T-6wvVXBWw" target="_blank">YouTube Music</a>
+        <a href="https://www.instagram.com/yeetfootmusic/" target="_blank">Instagram</a>
+      </div>
+    </section>
+
+    <!-- EMAIL CAPTURE -->
+    <section class="section">
+      <h2>BOOKING / CONTACT</h2>
+
+      <form class="email-form" id="emailForm">
+        <input type="email" id="emailInput" placeholder="Enter email for booking inquiries" required />
+        <button type="submit">Submit</button>
+      </form>
+
+      <p class="small">EPK inquiries only</p>
+    </section>
 
   </div>
 
-  <p class="tagline">Melodic • Atmospheric • Club Energy</p>
+  <script src="script.js"></script>
 
-</section>
-
-
-
-<!-- LATEST RELEASE -->
-<section class="section reveal">
-  <h2>LATEST RELEASE</h2>
-
-  <div class="release-box">
-    <h3>Yeetfoot</h3>
-    <p>Stream across all platforms</p>
-    <a href="https://open.spotify.com/artist/72lU4JJ2Hpqz4xuXzw7Ntg">LISTEN NOW</a>
-  </div>
-</section>
-
-<!-- MUSIC -->
-<section class="section dark reveal">
-  <h2>MUSIC</h2>
-
-  <iframe
-    src="https://open.spotify.com/embed/artist/72lU4JJ2Hpqz4xuXzw7Ntg"
-    width="100%"
-    height="380"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-  </iframe>
-
-</section>
-
-<!-- STREAM -->
-<section class="section reveal">
-  <h2>STREAM ON</h2>
-
-  <div class="platforms">
-
-    <a href="https://open.spotify.com/artist/72lU4JJ2Hpqz4xuXzw7Ntg">Spotify</a>
-    <a href="https://music.apple.com/gb/artist/yeetfoot/1636863748">Apple Music</a>
-    <a href="https://www.youtube.com/channel/UCcBVL7m0duC37T-6wvVXBWw">YouTube</a>
-    <a href="https://www.instagram.com/yeetfootmusic/">Instagram</a>
-
-  </div>
-</section>
-
-<!-- EMAIL -->
-<section class="section dark reveal">
-  <h2>FOR PROMOTERS</h2>
-
-  <form id="emailForm" class="email-form">
-    <input type="email" id="emailInput" placeholder="Email address" required />
-    <button type="submit">REQUEST EPK</button>
-  </form>
-
-  <p class="small">No spam. Only booking + release updates.</p>
-</section>
-
-<footer>
-  <p>© YEETFOOT</p>
-</footer>
-
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
