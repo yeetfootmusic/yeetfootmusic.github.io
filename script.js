@@ -1,6 +1,6 @@
 
 /* =========================
-   SCROLL REVEAL SYSTEM
+   SCROLL REVEAL
 ========================= */
 const reveals = document.querySelectorAll(".reveal");
 
@@ -20,7 +20,6 @@ document.getElementById("emailForm").addEventListener("submit", (e) => {
 
   const email = document.getElementById("emailInput").value;
 
-  // local storage (GitHub Pages safe)
   localStorage.setItem("yeetfoot_email", email);
 
   alert("Request received — EPK access logged.");
@@ -41,8 +40,8 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
 /* =========================
-   ANIMATED WAVEFORM ENGINE
-   (pseudo-audio reactive)
+   🎛️ WAVEFORM BACKGROUND
+   (CINEMATIC AUDIO-STYLE MOTION)
 ========================= */
 
 let t = 0;
@@ -53,23 +52,23 @@ function drawWaveform() {
   const width = canvas.width;
   const height = canvas.height;
 
-  const bars = 170;
-  const spacing = width / bars;
+  const bars = 180;
+  const barWidth = width / bars;
 
   for (let i = 0; i < bars; i++) {
 
-    // smooth layered sine motion = “audio feel”
+    // layered sine waves = "audio illusion"
     const wave =
       Math.sin(i * 0.12 + t) * 0.6 +
-      Math.sin(i * 0.04 + t * 1.4) * 0.4;
+      Math.sin(i * 0.05 + t * 1.3) * 0.4;
 
-    const barHeight = (wave + 1) * 70;
+    const barHeight = (wave + 1) * 75;
 
-    const x = i * spacing;
+    const x = i * barWidth;
     const y = height / 2 - barHeight / 2;
 
     ctx.fillStyle = "rgba(255,255,255,0.035)";
-    ctx.fillRect(x, y, spacing * 0.6, barHeight);
+    ctx.fillRect(x, y, barWidth * 0.6, barHeight);
   }
 
   t += 0.025;
