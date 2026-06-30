@@ -27,13 +27,13 @@ function triggerAbout() {
   }
 }
 
-/* ensure it ALWAYS triggers */
+/* ensures it always triggers */
 window.addEventListener("scroll", triggerAbout);
 window.addEventListener("load", triggerAbout);
 triggerAbout();
 
 /* =========================
-   EMAIL CAPTURE (LOCAL ONLY)
+   EMAIL CAPTURE
 ========================= */
 document.getElementById("emailForm").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -67,7 +67,6 @@ function draw() {
   const barWidth = canvas.width / bars;
 
   for (let i = 0; i < bars; i++) {
-
     const wave =
       Math.sin(i * 0.12 + t) +
       Math.sin(i * 0.05 + t * 1.3);
