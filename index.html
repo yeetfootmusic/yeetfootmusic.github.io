@@ -6,105 +6,84 @@
 <title>Yeetfoot | EPK</title>
 
 <link rel="stylesheet" href="style.css"/>
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Font -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- CINEMATIC INTRO -->
+<div class="intro" id="intro">
+  <h1>YEETFOOT</h1>
+</div>
+
+<!-- AUDIO VISUAL BACKGROUND -->
+<canvas id="bg"></canvas>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero reveal">
 
-  <div class="hero-content reveal">
+  <h1>YEETFOOT</h1>
 
-    <h1>YEETFOOT</h1>
-
-    <!-- SOCIAL ICONS -->
-    <div class="socials">
-      <a href="https://open.spotify.com/artist/72lU4JJ2Hpqz4xuXzw7Ntg" target="_blank">
-        <i class="fa-brands fa-spotify"></i>
-      </a>
-
-      <a href="https://instagram.com" target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-
-      <a href="https://soundcloud.com" target="_blank">
-        <i class="fa-brands fa-soundcloud"></i>
-      </a>
-
-      <a href="https://youtube.com" target="_blank">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
-
-      <a href="mailto:booking@yeetfoot.com">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-    </div>
-
-    <p class="tagline">Electronic • Melodic House • Atmospheric Club</p>
-
+  <div class="socials">
+    <a href="https://open.spotify.com/artist/72lU4JJ2Hpqz4xuXzw7Ntg"><i class="fa-brands fa-spotify"></i></a>
+    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://soundcloud.com"><i class="fa-brands fa-soundcloud"></i></a>
+    <a href="mailto:booking@yeetfoot.com"><i class="fa-solid fa-envelope"></i></a>
   </div>
+
+  <p class="tagline">Melodic • Atmospheric • Club Energy</p>
 </section>
 
-<!-- ABOUT -->
+<!-- LATEST RELEASE -->
 <section class="section reveal">
-  <h2>ABOUT</h2>
-  <p>
-    Yeetfoot is an electronic music project focused on melodic progression,
-    atmospheric sound design, and emotional club energy built for late-night sets and sunrise moments.
-  </p>
+  <h2>LATEST RELEASE</h2>
+
+  <div class="release">
+    <div class="release-box">
+      <h3>New Single</h3>
+      <p>Stream the latest Yeetfoot release</p>
+      <a href="https://open.spotify.com/artist/72lU4JJ2Hpqz4xuXzw7Ntg" target="_blank">
+        LISTEN NOW
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- MUSIC -->
-<section id="music" class="section dark reveal">
+<section class="section dark reveal">
   <h2>MUSIC</h2>
 
-  <div class="embed">
-
-    <iframe data-testid="embed-iframe"
-      style="border-radius:12px"
-      src="https://open.spotify.com/embed/artist/72lU4JJ2Hpqz4xuXzw7Ntg?utm_source=generator&si=8250fea9413b46bd"
-      width="100%"
-      height="352"
-      frameborder="0"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy">
-    </iframe>
-
-  </div>
+  <iframe
+    src="https://open.spotify.com/embed/artist/72lU4JJ2Hpqz4xuXzw7Ntg?utm_source=generator"
+    width="100%"
+    height="380"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
 </section>
 
-<!-- PRESS -->
+<!-- EMAIL CAPTURE -->
 <section class="section reveal">
-  <h2>PRESS PHOTOS</h2>
+  <h2>FOR PROMOTERS</h2>
+  <p>Get updates on releases + availability</p>
 
-  <div class="grid">
-    <div class="card">PRESS 01</div>
-    <div class="card">PRESS 02</div>
-    <div class="card">PRESS 03</div>
-  </div>
-</section>
+  <form id="emailForm" class="email-form">
+    <input type="email" id="emailInput" placeholder="Email address" required />
+    <button type="submit">REQUEST EPK</button>
+  </form>
 
-<!-- CONTACT -->
-<section class="section dark reveal">
-  <h2>BOOKING</h2>
-
-  <p>For shows, support slots, and collaborations:</p>
-
-  <a class="email" href="mailto:booking@yeetfoot.com">
-    booking@yeetfoot.com
-  </a>
+  <p class="small">No spam. Only booking + release updates.</p>
 </section>
 
 <footer>
   <p>© YEETFOOT</p>
 </footer>
+
+</div>
 
 <script src="script.js"></script>
 </body>
