@@ -1,6 +1,6 @@
 
 /* =========================
-   SCROLL REVEAL SYSTEM
+   SCROLL REVEAL
 ========================= */
 const reveals = document.querySelectorAll(".reveal");
 
@@ -11,24 +11,23 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  triggerAboutAnimation();
+  revealAbout();
 });
 
 /* =========================
-   EMAIL CAPTURE (STATIC SAFE)
+   EMAIL CAPTURE (LOCAL ONLY)
 ========================= */
 document.getElementById("emailForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
   const email = document.getElementById("emailInput").value;
-
   localStorage.setItem("yeetfoot_email", email);
 
   alert("Request received — EPK access logged.");
 });
 
 /* =========================
-   CANVAS WAVEFORM BACKGROUND
+   CANVAS WAVEFORM
 ========================= */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
@@ -55,14 +54,14 @@ function draw() {
       Math.sin(i * 0.12 + t) +
       Math.sin(i * 0.05 + t * 1.3);
 
-    const height = (wave + 2) * 40;
+    const h = (wave + 2) * 40;
 
     ctx.fillStyle = "rgba(255,255,255,0.03)";
     ctx.fillRect(
       i * barWidth,
-      canvas.height / 2 - height / 2,
+      canvas.height / 2 - h / 2,
       barWidth * 0.6,
-      height
+      h
     );
   }
 
@@ -73,27 +72,20 @@ function draw() {
 draw();
 
 /* =========================
-   CLEAN ABOUT ANIMATION
-   (NO WORD SPLITTING BUGS)
+   ABOUT FADE-IN (FIXED)
+   NO TEXT REBUILDING = NO BUGS
 ========================= */
-function triggerAboutAnimation() {
-  const el = document.getElementById("aboutText");
-  if (!el || el.dataset.done) return;
 
-  const text = el.innerText;
+function revealAbout() {
+  const about = document.getElementById("aboutText");
+  if (!about) return;
 
-  el.innerHTML = "";
+  const rect = about.getBoundingClientRect();
 
-/* create a single animated block */
-  const span = document.createElement("span");
-  span.className = "about-line";
-  span.textContent = text;
-
-  el.appendChild(span);
-
-  setTimeout(() => {
-    span.classList.add("show");
-  }, 300);
-
-  el.dataset.done = "true";
+  if (rect.top < window.innerHeight - 120) {
+    about.classList.add("show");
+  }
 }
+
+/* run once on load */
+revealAbout();
