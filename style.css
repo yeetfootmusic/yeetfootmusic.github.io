@@ -1,16 +1,12 @@
 
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
+/* BODY */
 body {
   font-family: "Inter", sans-serif;
   color: white;
@@ -23,7 +19,7 @@ body {
   background-attachment: fixed;
 }
 
-/* dark overlay */
+/* DARK OVERLAY */
 body::before {
   content: "";
   position: fixed;
@@ -33,9 +29,7 @@ body::before {
   pointer-events: none;
 }
 
-/* =========================
-   CANVAS (WAVEFORM)
-========================= */
+/* CANVAS */
 canvas {
   position: fixed;
   inset: 0;
@@ -46,17 +40,14 @@ canvas {
   opacity: 0.85;
 }
 
-/* =========================
-   CONTENT LAYER
-========================= */
+/* CONTENT LAYER */
 .content {
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
-/* =========================
-   HERO (CENTERED)
-========================= */
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -71,9 +62,7 @@ canvas {
   letter-spacing: 10px;
 }
 
-/* =========================
-   SOCIALS
-========================= */
+/* SOCIALS */
 .socials {
   margin-top: 20px;
   display: flex;
@@ -93,9 +82,7 @@ canvas {
   transform: scale(1.2);
 }
 
-/* =========================
-   SECTIONS (FULL CENTER SYSTEM)
-========================= */
+/* SECTIONS */
 .section {
   padding: 110px 12%;
   max-width: 1100px;
@@ -104,11 +91,15 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
-/* =========================
-   RELEASE BOX
-========================= */
+/* HEADINGS */
+.section h2 {
+  text-align: center;
+}
+
+/* RELEASE BOX */
 .release-box {
   background: #15151b;
   padding: 40px;
@@ -120,9 +111,7 @@ canvas {
   text-align: center;
 }
 
-/* =========================
-   STREAM LINKS
-========================= */
+/* STREAM LINKS */
 .platforms {
   display: flex;
   justify-content: center;
@@ -131,23 +120,12 @@ canvas {
   flex-wrap: wrap;
 }
 
-.platforms a {
-  color: white;
-  opacity: 0.7;
-  text-decoration: none;
-}
-
-.platforms a:hover {
-  opacity: 1;
-}
-
-/* =========================
-   EMAIL FORM
-========================= */
+/* EMAIL FORM */
 .email-form {
   display: flex;
   gap: 10px;
   margin-top: 20px;
+  justify-content: center;
 }
 
 .email-form input {
@@ -164,9 +142,7 @@ canvas {
   cursor: pointer;
 }
 
-/* =========================
-   ABOUT (FIXED + CLEAN + SLOW)
-========================= */
+/* ABOUT */
 .about-text {
   max-width: 750px;
   margin: auto;
@@ -177,9 +153,7 @@ canvas {
   transform: translateY(30px);
   filter: blur(8px);
 
-  transition: opacity 2.2s ease,
-              transform 2.2s ease,
-              filter 2.2s ease;
+  transition: all 2.2s ease;
 }
 
 .about-text.show {
@@ -188,9 +162,7 @@ canvas {
   filter: blur(0);
 }
 
-/* =========================
-   REVEAL SYSTEM
-========================= */
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -202,9 +174,7 @@ canvas {
   transform: translateY(0);
 }
 
-/* =========================
-   SMALL TEXT
-========================= */
+/* SMALL TEXT */
 .small {
   margin-top: 10px;
   opacity: 0.5;
