@@ -17,21 +17,26 @@ document.getElementById("emailForm").addEventListener("submit", (e) => {
   alert("Request received — EPK access logged.");
 });
 
-// ambient motion background
+// SAFE CANVAS (desktop + mobile fix)
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+window.addEventListener("resize", resize);
+resize();
 
 let t = 0;
 
 function animate() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   for (let i = 0; i < 140; i++) {
     const x = i * 10;
-    const y = canvas.height/2 + Math.sin(i * 0.15 + t) * 50;
+    const y = canvas.height / 2 + Math.sin(i * 0.15 + t) * 50;
 
     ctx.fillStyle = "rgba(255,255,255,0.03)";
     ctx.fillRect(x, y, 2, 2);
