@@ -13,26 +13,27 @@ window.addEventListener("scroll", () => {
 });
 
 /* =========================
-   ABOUT (CLEAN + STABLE)
+   ABOUT ANIMATION (FIXED + RELIABLE)
 ========================= */
 const about = document.getElementById("aboutText");
 
-const aboutObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, {
-  threshold: 0.35
-});
+function triggerAbout() {
+  if (!about) return;
 
-if (about) {
-  aboutObserver.observe(about);
+  const rect = about.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight * 0.85) {
+    about.classList.add("show");
+  }
 }
 
+/* ensure it ALWAYS triggers */
+window.addEventListener("scroll", triggerAbout);
+window.addEventListener("load", triggerAbout);
+triggerAbout();
+
 /* =========================
-   EMAIL CAPTURE
+   EMAIL CAPTURE (LOCAL ONLY)
 ========================= */
 document.getElementById("emailForm").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -44,7 +45,7 @@ document.getElementById("emailForm").addEventListener("submit", (e) => {
 });
 
 /* =========================
-   CANVAS WAVEFORM
+   WAVEFORM BACKGROUND
 ========================= */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
