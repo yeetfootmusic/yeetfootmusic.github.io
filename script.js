@@ -1,7 +1,8 @@
 
 /* =========================
-   SCROLL REVEAL
+   SCROLL REVEAL SYSTEM
 ========================= */
+
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
@@ -10,13 +11,12 @@ window.addEventListener("scroll", () => {
       el.classList.add("active");
     }
   });
-
-  revealAbout();
 });
 
 /* =========================
    EMAIL CAPTURE (LOCAL ONLY)
 ========================= */
+
 document.getElementById("emailForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -29,6 +29,7 @@ document.getElementById("emailForm").addEventListener("submit", (e) => {
 /* =========================
    CANVAS WAVEFORM
 ========================= */
+
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
@@ -72,20 +73,22 @@ function draw() {
 draw();
 
 /* =========================
-   ABOUT FADE-IN (FIXED)
-   NO TEXT REBUILDING = NO BUGS
+   ABOUT ANIMATION (FIXED)
+   NO TEXT REWRITING = NO BUGS
 ========================= */
 
-function revealAbout() {
-  const about = document.getElementById("aboutText");
-  if (!about) return;
+const about = document.getElementById("aboutText");
 
-  const rect = about.getBoundingClientRect();
+const aboutObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.35
+});
 
-  if (rect.top < window.innerHeight - 120) {
-    about.classList.add("show");
-  }
+if (about) {
+  aboutObserver.observe(about);
 }
-
-/* run once on load */
-revealAbout();
